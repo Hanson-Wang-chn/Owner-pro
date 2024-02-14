@@ -18,7 +18,7 @@
             </el-input>
         </div>
 
-        <div style="margin-top: 10px;">
+        <!-- <div style="margin-top: 10px;">
             <el-row :gutter="20">
                 <el-col :span="12" style="text-align: left;">
                     <el-checkbox v-model="form.remember" label="记住我" size="large" />
@@ -28,7 +28,7 @@
                 </el-col>
             </el-row>
             
-        </div>
+        </div> -->
 
         <div style="margin-top: 30px;">
             <el-button @click="login()" style="width: 200px;" type="success" plain>登录</el-button>
