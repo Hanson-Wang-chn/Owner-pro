@@ -1,7 +1,7 @@
 <template>
   <div style="height: 30px; background-color: whitesmoke; width: auto; padding: 15px;">
     <nav>
-      <RouterLink to="/welcome" class="TopLabel">Home</RouterLink>
+      <RouterLink to="/" class="TopLabel">Home</RouterLink>
       <RouterLink to="/index" class="TopLabel">index</RouterLink>
     </nav>
   </div>
@@ -13,8 +13,16 @@
 </template>
 
 <script setup>
-
 // import {Lock} from '@element-plus/icons-vue'
+import {get} from "@/net";
+import {ElMessage} from "element-plus";
+
+get('/api/user/me', () => {
+  ElMessage.success('已登录')
+}, () => {
+  ElMessage.warning('未登录')
+})
+
 </script>
 
 <style scoped>
