@@ -4,7 +4,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path:'/',
+      path:'/welcome',
       name:'welcome',
       component: () => import('@/views/WelcomeView.vue'),
       children: [
@@ -12,6 +12,11 @@ const router = createRouter({
           path:'',
           name: 'welcome-login',
           component: () => import('@/components/welcome/LoginPage.vue')
+        },
+        {
+          path:'register',
+          name: 'welcome-register',
+          component: () => import('@/components/welcome/RegisterPage.vue')
         } 
       ]
     },

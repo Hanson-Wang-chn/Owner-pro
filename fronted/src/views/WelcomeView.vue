@@ -1,6 +1,6 @@
 <template>
-  <div style="width: 100vw; height: 100vh; overflow: hidden; display: flex;">
-    <div style="flex: 1;">
+  <div style="width: 100%; height: 100vh; overflow: hidden; display: flex;">
+    <div>
       <el-image style="width: 100%; height: 100%;" fit="cover"
         src="https://img.zcool.cn/community/011aad554be56f000001bf72c38864.jpg@1280w_1l_2o_100sh.jpg"/>
     </div>

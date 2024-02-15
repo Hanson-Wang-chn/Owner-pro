@@ -1,34 +1,40 @@
+<template>
+  <div style="height: 30px; background-color: whitesmoke; width: auto; padding: 15px;">
+    <nav>
+      <RouterLink to="/welcome" class="TopLabel">Home</RouterLink>
+      <RouterLink to="/index" class="TopLabel">index</RouterLink>
+    </nav>
+  </div>
+
+  <div>
+    <router-view/>
+  </div>
+  
+</template>
+
 <script setup>
 
 // import {Lock} from '@element-plus/icons-vue'
 </script>
 
-<template>
-  <div style="height: 25px; background-color: whitesmoke;">
-    <nav>
-      <RouterLink to="/" class="TopLabel">Home</RouterLink>
-      <RouterLink to="/index" class="TopLabel">index</RouterLink>
-    </nav>
-  </div>
-  <router-view/>
-</template>
-
 <style scoped>
-nav a.TopLabel {
+a.TopLabel {
+  padding: 0 20px;
+  font-size: 20px;
   text-decoration: none;
   color: var(--color-text);
   text-align: center; 
   align-items: center;
 }
 
-nav a.TopLabel:hover {
+a.TopLabel:hover {
   transform: translateY(-3px);
   background-color: transparent;
 }
 
 nav a {
   display: inline-block;
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
   border-left: 1px solid var(--color-border);
 }
 </style>

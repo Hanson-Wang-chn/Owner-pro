@@ -3,21 +3,24 @@
     欢迎进入
   </div>
   <div>
-    <el-button type="danger" plain>退出登录</el-button>
+    <el-button @click="logout()" type="danger" plain>退出登录</el-button>
     
   </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import {get} from "@/net";
+import {ElMessage} from "element-plus";
+import router from "@/router"
 
-export default defineComponent({
-  setup (props, context) {
-    return {
-      
-    }
-  },
-})
+const logout = () => {
+  get('/api/auth/login', (message) => {
+      ElMessage.success(message)
+      router.push('/')
+  })
+    
+}
+
 </script>
 
 <style scoped>

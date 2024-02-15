@@ -1,7 +1,7 @@
 <template>
     <div style="text-align: center; margin: 0 20px;">
         <div style="margin-top: 150px;">
-            <div style="font-size: 25px;">登录</div>
+            <div style="font-size: 25px; font-weight: bold;">登录</div>
             <div></div>
         </div>
 
@@ -18,17 +18,17 @@
             </el-input>
         </div>
 
-        <!-- <div style="margin-top: 10px;">
+        <div style="margin-top: 10px;">
             <el-row :gutter="20">
                 <el-col :span="12" style="text-align: left;">
-                    <el-checkbox v-model="form.remember" label="记住我" size="large" />
+                    <el-checkbox v-model="form.remember" label="管理员" size="large" />
                 </el-col>
-                <el-col :span="12" style="text-align: right;">
+                <!-- <el-col :span="12" style="text-align: right;">
                     <el-link>忘记密码</el-link>
-                </el-col>
+                </el-col> -->
             </el-row>
             
-        </div> -->
+        </div>
 
         <div style="margin-top: 30px;">
             <el-button @click="login()" style="width: 200px;" type="success" plain>登录</el-button>
@@ -39,7 +39,7 @@
         </el-divider>
 
         <div style="margin-top: 30px;">
-            <el-button style="width: 200px;" type="warning" plain>注册</el-button>
+            <el-button @click="router.push('/register')" style="width: 200px;" type="warning" plain>注册</el-button>
         </div>
     </div>
 </template>
