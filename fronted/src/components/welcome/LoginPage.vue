@@ -31,7 +31,7 @@
         </div>
 
         <div style="margin-top: 30px;">
-            <el-button @click="login()" style="width: 200px;" type="success" plain>登录</el-button>
+            <el-button style="width: 200px;" type="success" plain @click="test">登录</el-button>
         </div>
 
         <el-divider>
@@ -50,6 +50,9 @@ import { ElMessage } from 'element-plus';
 import {reactive} from 'vue';
 import {post} from '@/net';
 import router from '@/router';
+import {useStore} from '@/stores'
+
+import 'element-plus/theme-chalk/el-message.css';
 
 const form = reactive({
     username: '',
@@ -57,20 +60,40 @@ const form = reactive({
     remember: false
 })
 
+const store = useStore()
+
 const login = () => {
     if (!form.username || !form.password) {
         ElMessage.warning('请填写用户名和密码')
     }
     else {
+        post登录信息
         post('/api/auth/login', {
             username: form.username,
             password: form.password,
             remember: form.remember
-        }, () => {
+        }, (message) => {
             ElMessage.success(message)
-            router.push('/index')
+            // get当前用户信息
+            get('/api/user/me', (message) => { 
+                store.auth.user = message;
+                router.push('/index')
+                ElMessage.success('登录成功')
+            }, () => {
+                store.suth.user = null;
+                ElMessage.warning('登录失败')
+            })  
         })
     }
+}
+
+const test = () => {
+    console.log('cnm,老子按了');
+    ElMessage.success('cccc');
+    ElMessage({
+        message: 'this is a message.',
+        type: 'success',
+    })
 }
 
 </script>

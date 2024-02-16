@@ -16,12 +16,22 @@
 // import {Lock} from '@element-plus/icons-vue'
 import {get} from "@/net";
 import {ElMessage} from "element-plus";
+import {useStore} from "@/stores"
 
-get('/api/user/me', () => {
-  ElMessage.success('已登录')
-}, () => {
-  ElMessage.warning('未登录')
-})
+const store = useStore();
+
+if (store.auth.user == null) {
+  // get当前用户
+  get('/api/user/me', (message) => { 
+    store.auth.user = message;
+    ElMessage.success('登录成功')
+  }, () => {
+    store.suth.user = null;
+    ElMessage.warning('登录失败')
+  })  
+}
+
+
 
 </script>
 
