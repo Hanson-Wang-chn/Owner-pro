@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>云端博远首页</title>
     <link rel="stylesheet" href="iconfont/iconfont.css">
     <link rel="stylesheet" href="index.css">
+    <script src="index-calendar.js"></script>
 </head>
 
 <body>
@@ -38,7 +39,7 @@
     </div>
     <!-- 第一大行：个人模块和日历 -->
     <div class="line1 w">
-        <a href="#" class="user radius-shadow">
+        <a href="#" class="user bgc-radius-shadow">
             <!-- 点击进入个人中心 -->
             <img src="images/test-pic.jpg" alt="">
             <div class="user-info">
@@ -48,10 +49,55 @@
                 <p>uid:000001</p>
             </div>
         </a>
-        <div class="calendar radius-shadow">
-            111
+        <div class="calendar bgc-radius-shadow">
+
         </div>
     </div>
+    <!-- 第二大行：自习室聊天室 -->
+    <div class="line2 w">
+        <div class="study-room bgc-radius-shadow">
+            <div class="study-room-head">
+                <h3><i class="iconfont icon-zixishi"></i>自习室</h3>
+                <a href="#">立即加入</a>
+            </div>
+            <div class="study-room-body">
+                <p>目前自习室中，他们正在学习</p>
+                <div><img src="images/test-pic.jpg" alt="">
+                    <img src="images/test-pic.jpg" alt="">
+                    <img src="images/test-pic.jpg" alt="">
+                    <span>...</span>
+                </div>
+                <p class="down">共 x 人</p>
+
+            </div>
+        </div>
+        <div class="chat-room bgc-radius-shadow">
+            <div class="chat-room-head">
+                <h3><i class="iconfont icon-chat"></i>聊天室</h3>
+                <a href="#">立即加入</a>
+            </div>
+            <div class="chat-room-body">
+                <div class="preview">
+                    <div class="message">
+                        <div class="img-username">
+                            <img src="images/test-pic.jpg" alt="">
+                            <span>username1</span>
+                        </div>
+                        <p>这是目前倒数第二句话</p>
+                    </div>
+                    <div class="message">
+                        <div class="img-username">
+                            <img src="images/test-pic.jpg" alt="">
+                            <span>username2</span>
+
+                        </div>
+                        <p>这是目前最后一句话</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
