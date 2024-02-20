@@ -26,6 +26,24 @@ const router = createRouter({
       path: '/index',
       name: 'index',
       component: () => import('@/views/IndexView.vue')
+    },
+    {
+      path: '/study',
+      name: 'study',
+      component: () => import('@/views/StudyRoomView.vue'),
+      children: [
+        {
+          path: '',
+          name: 'select',
+          component: () => import('@/components/StudyRoom/SelectPage.vue')
+        },
+        {
+          path: '/study/:roomId',
+          name: 'room',
+          component: () => import('@/components/StudyRoom/RoomPage.vue')
+        }
+      ]
+
     }
 
 
@@ -34,15 +52,15 @@ const router = createRouter({
 
 // router.beforeEach((to, from, next) => {
 //   const store = useStore()
-//   if (store.auth.user != null && to.name.startsWith('welcome-')) {
+//   if (store.auth.user != null && to.path == '/') {
 //     next('/index')
 //   }
-//   else if (store.auth.user == null && to.name.startsWith('index')) {
+//   else if (store.auth.user == null && to.path != '/') {
 //     ElMessage.warning('未登录');
 //     next('/')
 //   }
-//   else if (to.matched.length == 0){
-//     next('/index')
+//   else if (!router.hasRoute(to.name)){
+//     next('/')
 //   }
 //   else {
 //     next()

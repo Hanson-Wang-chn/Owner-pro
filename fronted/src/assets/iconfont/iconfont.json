@@ -1,0 +1,58 @@
+{
+  "id": "4434994",
+  "name": "owner-pro",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "37641659",
+      "name": "箭头 -右",
+      "font_class": "a-jiantou-you",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "37641674",
+      "name": "箭头 -左",
+      "font_class": "a-jiantou-zuo",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "11891790",
+      "name": "chat",
+      "font_class": "chat",
+      "unicode": "e66d",
+      "unicode_decimal": 58989
+    },
+    {
+      "icon_id": "12474703",
+      "name": "自习室",
+      "font_class": "zixishi",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "5387670",
+      "name": "云",
+      "font_class": "yun",
+      "unicode": "eb2c",
+      "unicode_decimal": 60204
+    },
+    {
+      "icon_id": "1304893",
+      "name": "邮件",
+      "font_class": "youjian",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "4550494",
+      "name": "箭头",
+      "font_class": "jiantou",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    }
+  ]
+}
