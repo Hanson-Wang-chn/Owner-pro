@@ -4,16 +4,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup>
 
-export default defineComponent({
-  setup (props, context) {
-    return {
-      
-    }
-  },
-})
 </script>
 
 <style scoped>

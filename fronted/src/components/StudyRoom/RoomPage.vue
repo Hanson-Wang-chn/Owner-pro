@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>自习室 {{ roomNumber }}</h1>
+    <h1>自习室 {{ roomId }}</h1>
     <div v-if="mmembers && members.value.length === 0">暂无成员</div>
     <div v-else>
       <div v-for="(member, index) in members" :key="index" class="member">
@@ -31,10 +31,15 @@ const totalStudyTime = ref(0); // 当前已学习时间
 const status = ref('study'); // 当前状态，默认为学习
 
 export default {
-    mounted() {
-        const roomId = this.$route.params.roomId;
-        console.log(roomId);
+  data() {
+    return {
+      roomId : this.$route.params.roomId
     }
+  },
+
+  mounted() {
+      
+  }
 }
 
 

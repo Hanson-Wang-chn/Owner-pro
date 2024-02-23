@@ -31,7 +31,7 @@
         </div>
 
         <div style="margin-top: 30px;">
-            <el-button style="width: 200px;" type="success" plain @click="test">登录</el-button>
+            <el-button style="width: 200px;" type="success" plain @click="login">登录</el-button>
         </div>
 
         <el-divider>
@@ -51,39 +51,37 @@ import {reactive} from 'vue';
 import {post} from '@/net';
 import router from '@/router';
 import {useStore} from '@/stores'
+import axios from 'axios';
 
 import 'element-plus/theme-chalk/el-message.css';
 
 const form = reactive({
     username: '',
-    password: '',
-    remember: false
+    password: ''
 })
 
 const store = useStore()
 
 const login = () => {
     if (!form.username || !form.password) {
-        ElMessage.warning('请填写用户名和密码')
+        alert('请填写用户名和密码')
     }
     else {
-        post登录信息
-        post('/api/auth/login', {
+        axios.post('/account/login', {
             username: form.username,
-            password: form.password,
-            remember: form.remember
-        }, (message) => {
-            ElMessage.success(message)
-            // get当前用户信息
-            get('/api/user/me', (message) => { 
-                store.auth.user = message;
-                router.push('/index')
-                ElMessage.success('登录成功')
-            }, () => {
-                store.suth.user = null;
-                ElMessage.warning('登录失败')
-            })  
+            password: form.password
         })
+        .then(response => {
+            // 登录成功，处理响应
+            router.push('/index');
+            console.log(response.data);
+            // 可以跳转到用户主页等操作
+        })
+        .catch(error => {
+            // 登录失败，处理错误
+            console.error(error);
+            // 可以显示错误消息等操作
+        });
     }
 }
 

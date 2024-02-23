@@ -29,8 +29,7 @@
             </ul>
           </li>
           <li><RouterLink to="/study">自习室</RouterLink></li>
-          <li><a href="#">聊天室</a></li>
-              
+          <li><RouterLink to="/self">个人信息</RouterLink></li>
               
           </ul>
       </div>
@@ -61,6 +60,7 @@ import {get} from "@/net";
 import {ElMessage} from "element-plus";
 import {useStore} from "@/stores"
 import {MostlyCloudy} from '@element-plus/icons-vue';
+import { RouterLink } from "vue-router";
 
 const store = useStore();
 
